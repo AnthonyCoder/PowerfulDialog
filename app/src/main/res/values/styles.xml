@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="NormalDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@style/normalDialogAnim</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    <style name="normalDialogAnim" parent="android:Animation">
+        <item name="@android:windowEnterAnimation">@anim/normal_dialog_enter
+        </item>
+        <item name="@android:windowExitAnimation">@anim/normal_dialog_exit
+        </item>
+    </style>
+    <!--底部弹出-->
+    <style name="fromBottomDialogStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/bottom_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/bottom_dialog_exit</item>
+    </style>
+    <!--中间放大-->
+    <style name="CenterDialogStyle" parent="android:Animation">
+        <item name="android:windowEnterAnimation">@anim/center_dialog_enter</item>
+        <item name="android:windowExitAnimation">@anim/center_dialog_exit</item>
+    </style>
+</resources>

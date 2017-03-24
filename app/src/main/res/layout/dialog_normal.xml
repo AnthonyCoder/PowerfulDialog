@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_shape_dialog_normal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minHeight="260px"
+    android:gravity="center"
+    android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="60px"
+            android:text="标题"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/tv_message"
+            android:layout_height="0dp"
+            android:minHeight="120px"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:gravity="center"
+            android:text="投递失败：你的简历尚不完善！"
+            android:textColor="@color/text_gray_normal"
+            android:textSize="28px" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line_color"/>
+
+        <LinearLayout
+            android:id="@+id/ll_prompt_style1"
+            android:layout_width="match_parent"
+            android:layout_height="95px"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/bt_left"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_weight="4"
+                android:padding="10dp"
+                android:text="取消"
+                android:textColor="@color/app_color"
+                android:textSize="28px"
+                android:visibility="visible" />
+
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:background="@color/line_color"></View>
+
+            <Button
+                android:id="@+id/bt_right"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="确定"
+                android:background="@null"
+                android:textColor="@color/app_color"
+                android:textSize="28px"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+</LinearLayout>

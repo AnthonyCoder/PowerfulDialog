@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="app_color">#1682d1</color>
+    <color name="white">#FFFFFF</color> <!-- 白色背景 -->
+    <color name="transparency">#00000000</color> <!-- 透明 -->
+    <color name="line_color">#e5e5e5</color> <!-- 分割线颜色 -->
+    <color name="text_gray_normal">#585858</color> <!-- 灰色字体 -->
+
+    <color name="dialog_content_color">#737373</color><!--弹出框颜色-->
+    <color name="dialog_warn_color">#e64340</color><!--弹出框警告色-->
+    <color name="dialog_normal_color">#4c4c4c</color><!--弹出框普通色-->
+</resources>
