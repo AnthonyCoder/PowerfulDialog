@@ -1,7 +1,7 @@
 package android.maple.powerfuldialog;
 
 import android.content.Context;
-import android.maple.powerfuldialog.dialog.AppAlertDialog;
+import android.maple.powerfuldialog.dialog.PowerfulDialog;
 import android.maple.powerfuldialog.utils.ToastUtils;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private AppAlertDialog alertDialog;
+    private PowerfulDialog alertDialog;
     private Context context;
     private int temp=0;//临时变量
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button1:
-                alertDialog=new AppAlertDialog.Builder(context)
+                alertDialog=new PowerfulDialog.Builder(context)
                         .setDialogView(R.layout.dialog_normal)
                         .setText(R.id.bt_left,"取消")
                         .setText(R.id.bt_right,"确定")
@@ -54,7 +54,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             case R.id.button2:
-                alertDialog=new AppAlertDialog.Builder(context)
+                alertDialog=new PowerfulDialog.Builder(context)
                         .setDialogView(R.layout.dialog_normal)
                         .setText(R.id.bt_left,"取消")
                         .setText(R.id.tv_title,"温馨提示")
@@ -67,11 +67,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         })
                         .setViewVisiable(R.id.bt_right,View.GONE)
-                        .fullWidth()
+                        .setFullWidth()
                         .show();
                 break;
             case R.id.button3:
-                alertDialog=new AppAlertDialog.Builder(context)
+                alertDialog=new PowerfulDialog.Builder(context)
                         .setDialogView(R.layout.dialog_result)
                         .setText(R.id.bt_center,"提交")
                         .setCancelable(false)
@@ -86,8 +86,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             case R.id.button4:
-                alertDialog=new AppAlertDialog.Builder(context)
+                alertDialog=new PowerfulDialog.Builder(context)
                         .setDialogView(R.layout.dialog_radio_select)
+                        .setWidthAndHeight(600,300)
                         .setOnclickListener(R.id.bt_getheight, new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         .show();
                 break;
             case R.id.button5:
-                alertDialog=new AppAlertDialog.Builder(context)
+                alertDialog=new PowerfulDialog.Builder(context)
                         .setDialogView(R.layout.dialog_chose_photo)
                         .setOnclickListener(R.id.dialog_tv_take_photo, new View.OnClickListener() {
                             @Override
@@ -122,16 +123,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 alertDialog.dismiss();
                             }
                         })
-                        .fromBottom(true)
+                        .setFromBottom(true)
                         .setCancelable(true)
                         .show();
                 break;
             case R.id.button6:
-                alertDialog=new AppAlertDialog.Builder(context)
+                alertDialog=new PowerfulDialog.Builder(context)
                         .setDialogView(R.layout.dialog_result)
                         .setText(R.id.bt_center,"切换图片")
                         .setImage(R.id.iv_icon,R.mipmap.icon_form)
                         .setText(R.id.tv_warning,"注：此弹框演示的是图片的可配置")
+                        .setWidthAndHeightForPercent(0.6f,0.3f)
                         .setAnimations(R.style.CenterDialogStyle)
                         .setCancelable(true)
                         .setOnclickListener(R.id.bt_center, new View.OnClickListener() {
