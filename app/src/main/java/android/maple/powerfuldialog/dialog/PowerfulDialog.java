@@ -14,13 +14,13 @@ import android.view.ViewGroup;
  * Created by wz on 2017/3/22
  * 修订历史:
  */
-public class AppAlertDialog extends Dialog {
+public class PowerfulDialog extends Dialog {
 
-    private AlertController mAlert;
+    private PowerfulController mAlert;
 
-    public AppAlertDialog(Context context, int themeResId) {
+    public PowerfulDialog(Context context, int themeResId) {
         super(context, themeResId);
-        mAlert=new AlertController(this,getWindow());
+        mAlert=new PowerfulController(this,getWindow());
     }
     /**
      * 设置文本
@@ -53,7 +53,7 @@ public class AppAlertDialog extends Dialog {
     }
 
     public static class Builder{
-        private final AlertController.AlertParams P;
+        private final PowerfulController.AlertParams P;
 
         public Builder(Context context){
             this(context, R.style.NormalDialogStyle);
@@ -65,15 +65,15 @@ public class AppAlertDialog extends Dialog {
          * @param themeResId dialog显示样式
          */
         public Builder(Context context, int themeResId){
-            this.P = new AlertController.AlertParams(context,themeResId);
+            this.P = new PowerfulController.AlertParams(context,themeResId);
         }
 
         /**
          * 创建dialog
          * @return
          */
-        public AppAlertDialog create(){
-            AppAlertDialog dialog = new AppAlertDialog(this.P.mContext, P.mThemeResId);
+        public PowerfulDialog create(){
+            PowerfulDialog dialog = new PowerfulDialog(this.P.mContext, P.mThemeResId);
             this.P.apply(dialog.mAlert);
             dialog.setCancelable(this.P.mCancelable);
 
@@ -90,8 +90,8 @@ public class AppAlertDialog extends Dialog {
 
             return dialog;
         }
-        public AppAlertDialog show() {
-            AppAlertDialog dialog = this.create();
+        public PowerfulDialog show() {
+            PowerfulDialog dialog = this.create();
             dialog.show();
             return dialog;
         }
@@ -102,7 +102,7 @@ public class AppAlertDialog extends Dialog {
          *  dialog填充屏幕宽度
          * @return
          */
-        public AppAlertDialog.Builder fullWidth() {
+        public PowerfulDialog.Builder setFullWidth() {
             this.P.mWidth = ViewGroup.LayoutParams.MATCH_PARENT;
             return this;
         }
@@ -110,7 +110,7 @@ public class AppAlertDialog extends Dialog {
          *  dialog填充屏幕高度
          * @return
          */
-        public AppAlertDialog.Builder fullHeight() {
+        public PowerfulDialog.Builder setFullHeight() {
             this.P.mHeight = ViewGroup.LayoutParams.MATCH_PARENT;
             return this;
         }
@@ -120,7 +120,7 @@ public class AppAlertDialog extends Dialog {
          * @param isAnimation 是否有动画效果
          * @return
          */
-        public AppAlertDialog.Builder fromBottom(boolean isAnimation){
+        public PowerfulDialog.Builder setFromBottom(boolean isAnimation){
             if(isAnimation){
                 this.P.mAnimation=R.style.fromBottomDialogStyle;
             }
@@ -134,17 +134,28 @@ public class AppAlertDialog extends Dialog {
          * @param height
          * @return
          */
-        public AppAlertDialog.Builder setWidthAndHeight(int width, int height) {
+        public PowerfulDialog.Builder setWidthAndHeight(int width, int height) {
             this.P.mWidth=width;
-            this.P.mHeight =width;
+            this.P.mHeight =height;
             return this;
         }
 
         /**
+         * 设置dialog的百分比宽高
+         * @param pWidth
+         * @param pHeight
+         * @return
+         */
+        public PowerfulDialog.Builder setWidthAndHeightForPercent(float pWidth,float pHeight){
+            this.P.pWidth=pWidth;
+            this.P.pHeight=pHeight;
+            return this;
+        }
+        /**
          * 添加默认动画
          * @return
          */
-        public AppAlertDialog.Builder addDefaultAnimation() {
+        public PowerfulDialog.Builder addDefaultAnimation() {
             this.P.mAnimation=R.style.normalDialogAnim;
             return this;
         }
@@ -152,7 +163,7 @@ public class AppAlertDialog extends Dialog {
          * 设置自定义动画
          * @return
          */
-        public AppAlertDialog.Builder setAnimations(int animStyle) {
+        public PowerfulDialog.Builder setAnimations(int animStyle) {
             this.P.mAnimation=animStyle;
             return this;
         }
@@ -162,12 +173,12 @@ public class AppAlertDialog extends Dialog {
          * @param view
          * @return
          */
-        public AppAlertDialog.Builder setDialogView(View view) {
+        public PowerfulDialog.Builder setDialogView(View view) {
             this.P.mView = view;
             this.P.mViewLayoutResId = 0;
             return this;
         }
-        public AppAlertDialog.Builder setDialogView(int layoutResId) {
+        public PowerfulDialog.Builder setDialogView(int layoutResId) {
             this.P.mView = null;
             this.P.mViewLayoutResId = layoutResId;
             return this;
@@ -178,7 +189,7 @@ public class AppAlertDialog extends Dialog {
          * @param cancelable
          * @return
          */
-        public AppAlertDialog.Builder setCancelable(boolean cancelable) {
+        public PowerfulDialog.Builder setCancelable(boolean cancelable) {
             this.P.mCancelable = cancelable;
             return this;
         }
@@ -187,7 +198,7 @@ public class AppAlertDialog extends Dialog {
          * @param ispopsoftkey
          * @return
          */
-        public AppAlertDialog.Builder setIsPopSoftKey(boolean ispopsoftkey) {//设置是否弹出软键盘
+        public PowerfulDialog.Builder setIsPopSoftKey(boolean ispopsoftkey) {//设置是否弹出软键盘
             this.P.mIsPopSoftKey = ispopsoftkey;
             return this;
         }
@@ -197,7 +208,7 @@ public class AppAlertDialog extends Dialog {
          * @param onCancelListener
          * @return
          */
-        public AppAlertDialog.Builder setOnCancelListener(OnCancelListener onCancelListener) {
+        public PowerfulDialog.Builder setOnCancelListener(OnCancelListener onCancelListener) {
             this.P.mOnCancelListener = onCancelListener;
             return this;
         }
@@ -206,7 +217,7 @@ public class AppAlertDialog extends Dialog {
          * @param onDismissListener
          * @return
          */
-        public AppAlertDialog.Builder setOnDismissListener(OnDismissListener onDismissListener) {
+        public PowerfulDialog.Builder setOnDismissListener(OnDismissListener onDismissListener) {
             this.P.mOnDismissListener = onDismissListener;
             return this;
         }
@@ -216,7 +227,7 @@ public class AppAlertDialog extends Dialog {
          * @param onKeyListener
          * @return
          */
-        public AppAlertDialog.Builder setOnKeyListener(OnKeyListener onKeyListener) {
+        public PowerfulDialog.Builder setOnKeyListener(OnKeyListener onKeyListener) {
             this.P.mOnKeyListener = onKeyListener;
             return this;
         }
@@ -227,7 +238,7 @@ public class AppAlertDialog extends Dialog {
          * @param text
          * @return
          */
-        public AppAlertDialog.Builder setText(int viewId, CharSequence text){//设置文本
+        public PowerfulDialog.Builder setText(int viewId, CharSequence text){//设置文本
             this.P.mTextArray.put(viewId,text);
             return this;
         }
@@ -237,7 +248,7 @@ public class AppAlertDialog extends Dialog {
          * @param colorRes
          * @return
          */
-        public AppAlertDialog.Builder setTextColor(int viewId, int colorRes){//设置文本
+        public PowerfulDialog.Builder setTextColor(int viewId, int colorRes){//设置文本
             this.P.mTextColorArray.put(viewId,colorRes);
             return this;
         }
@@ -247,7 +258,7 @@ public class AppAlertDialog extends Dialog {
          * @param imgRes
          * @return
          */
-        public AppAlertDialog.Builder setImage(int viewId, int imgRes){//设置文本
+        public PowerfulDialog.Builder setImage(int viewId, int imgRes){//设置文本
             this.P.mImageArray.put(viewId,imgRes);
             return this;
         }
@@ -258,7 +269,7 @@ public class AppAlertDialog extends Dialog {
          * @param visibilityMode
          * @return
          */
-        public AppAlertDialog.Builder setViewVisiable(int viewId, int visibilityMode){//设置显示隐藏功能
+        public PowerfulDialog.Builder setViewVisiable(int viewId, int visibilityMode){//设置显示隐藏功能
             this.P.mVisibilityArray.put(viewId,visibilityMode);
             return this;
         }
@@ -269,7 +280,7 @@ public class AppAlertDialog extends Dialog {
          * @param listener
          * @return
          */
-        public AppAlertDialog.Builder setOnclickListener(int viewId, View.OnClickListener listener){//设置点击事件
+        public PowerfulDialog.Builder setOnclickListener(int viewId, View.OnClickListener listener){//设置点击事件
             this.P.mClickArray.put(viewId,listener);
             return this;
         }

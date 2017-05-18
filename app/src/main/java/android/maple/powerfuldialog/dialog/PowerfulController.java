@@ -3,6 +3,7 @@ package android.maple.powerfuldialog.dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.maple.powerfuldialog.R;
+import android.maple.powerfuldialog.utils.ScreenUtils;
 import android.util.SparseArray;
 import android.view.Gravity;
 import android.view.View;
@@ -17,14 +18,14 @@ import android.view.WindowManager;
  * Created by wz on 2017/3/22
  * 修订历史:
  */
-class AlertController {
+class PowerfulController {
 
-    private AppAlertDialog mDialog;
+    private PowerfulDialog mDialog;
     private Window mWindow;
     private DialogViewHelper helper;
 
-    public AlertController(AppAlertDialog appAlertDialog, Window window) {
-        this.mDialog= appAlertDialog;
+    public PowerfulController(PowerfulDialog powerfulDialog, Window window) {
+        this.mDialog= powerfulDialog;
         this.mWindow=window;
     }
 
@@ -33,7 +34,7 @@ class AlertController {
     }
 
     //获取dialog
-    public AppAlertDialog getmDialog() {
+    public PowerfulDialog getmDialog() {
         return mDialog;
     }
     //获取dialog的window
@@ -117,6 +118,8 @@ class AlertController {
         public SparseArray<Integer> mVisibilityArray=new SparseArray<>();//存放是否显示的布局
         public int mWidth= ViewGroup.LayoutParams.WRAP_CONTENT;//默认宽度自适应
         public int mHeight= ViewGroup.LayoutParams.WRAP_CONTENT;//默认宽度自适应
+        public float pWidth=-1f;//默认百分比宽度
+        public float pHeight=-1f;//默认百分比高度
         public int mAnimation= R.style.normalDialogAnim;//设置的默认动画效果
         public int mGravity= Gravity.CENTER;//设置默认的Dialog位置
 //        public SparseArray<WeakReference<View.OnClickListener>> mClickArray=new SparseArray<>();//存放点击事件
@@ -131,7 +134,7 @@ class AlertController {
          * 绑定和设置参数
          * @param mAlert 
          * */
-        public void apply(AlertController mAlert) {
+        public void apply(PowerfulController mAlert) {
             DialogViewHelper helper=null;
             //设置dialog布局
             if(mViewLayoutResId!=0){
@@ -188,8 +191,16 @@ class AlertController {
             window.setWindowAnimations(mAnimation);
             //设置宽高
             WindowManager.LayoutParams params= window.getAttributes();
-            params.width=mWidth;
-            params.height=mHeight;
+            if(pHeight>0){
+                params.height= (int) (ScreenUtils.getScreenHeight(mContext)*pHeight);
+            }else{
+                params.width=mWidth;
+            }
+            if(pWidth>0){
+                params.width= (int) (ScreenUtils.getScreenWidth(mContext)*pWidth);
+            }else{
+                params.height=mHeight;
+            }
             window.setAttributes(params);
         }
     }

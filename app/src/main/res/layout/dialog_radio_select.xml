@@ -4,39 +4,13 @@
     android:layout_width="wrap_content"
     android:background="@drawable/bg_shape_dialog_normal"
     android:layout_height="match_parent">
-    <LinearLayout
+    <TextView
         android:layout_width="match_parent"
-        android:padding="20px"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:textColor="@color/text_gray_normal"
-            android:layout_height="wrap_content"
-            android:text="身高要求"/>
-        <RadioGroup
-            android:layout_width="0dp"
-            android:layout_weight="2"
-            android:orientation="horizontal"
-            android:layout_height="wrap_content">
-            <RadioButton
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:textColor="@color/text_gray_normal"
-                android:layout_height="wrap_content"
-                android:text="无要求"/>
-
-            <RadioButton
-                android:layout_weight="1"
-                android:textColor="@color/text_gray_normal"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:text="要求"/>
-        </RadioGroup>
-    </LinearLayout>
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_gray_normal"
+        android:gravity="center"
+        android:padding="10px"
+        android:text="请填写您的身高"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
@@ -46,26 +20,25 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:layout_height="100px">
-        <View
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/et_height"
-            android:layout_width="wrap_content"
             android:textColor="@color/text_gray_normal"
-            android:layout_height="wrap_content" />
+            android:inputType="number"
+            android:layout_width="0dp"
+            android:gravity="center_vertical|right"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_gray_normal"
             android:paddingRight="100px"
-            android:text="以上"/>
+            android:text="cm以上"/>
         <Button
             android:id="@+id/bt_getheight"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_gray_normal"
+            android:textColor="@color/white"
             android:text="获取身高"/>
     </LinearLayout>
 </LinearLayout>
