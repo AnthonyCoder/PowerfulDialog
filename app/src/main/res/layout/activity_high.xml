@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
+    android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
     <Button
-        android:id="@+id/bt_normal"
+        android:id="@+id/bt_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="普通用法"/>
+        android:text="弹出ListView处理"/>
     <Button
-        android:id="@+id/bt_high"
+        android:id="@+id/bt_complex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="高级用法"/>
-    <Button
-        android:id="@+id/bt_config"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="自行封装"/>
+        android:text="复杂布局的使用"/>
 </LinearLayout>

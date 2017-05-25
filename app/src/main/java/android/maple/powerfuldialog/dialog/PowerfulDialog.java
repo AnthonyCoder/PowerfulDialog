@@ -55,6 +55,9 @@ public class PowerfulDialog extends Dialog {
     public static class Builder{
         private final PowerfulController.AlertParams P;
 
+        private Context mContext;
+        private PowerfulDialog mDialog;
+
         public Builder(Context context){
             this(context, R.style.NormalDialogStyle);
         }
@@ -65,6 +68,7 @@ public class PowerfulDialog extends Dialog {
          * @param themeResId dialog显示样式
          */
         public Builder(Context context, int themeResId){
+            this.mContext=context;
             this.P = new PowerfulController.AlertParams(context,themeResId);
         }
 
@@ -94,6 +98,18 @@ public class PowerfulDialog extends Dialog {
             PowerfulDialog dialog = this.create();
             dialog.show();
             return dialog;
+        }
+        public PowerfulDialog dismiss() {
+            mDialog.dismiss();
+            return mDialog;
+        }
+
+        public PowerfulDialog destory() {
+            if (mDialog != null) {
+                mDialog.dismiss();
+                mDialog = null;
+            }
+            return mDialog;
         }
 
         //配置参数

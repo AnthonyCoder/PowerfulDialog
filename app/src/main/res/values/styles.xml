@@ -33,4 +33,9 @@
         <item name="android:windowEnterAnimation">@anim/center_dialog_enter</item>
         <item name="android:windowExitAnimation">@anim/center_dialog_exit</item>
     </style>
+    <style name="horizontal_line">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">1px</item>
+    <item name="android:background">@color/line_color</item>
+</style>
 </resources>
