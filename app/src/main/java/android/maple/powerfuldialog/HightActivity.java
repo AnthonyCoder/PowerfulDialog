@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.maple.powerfuldialog.adapter.CoolCommonRecycleviewAdapter;
 import android.maple.powerfuldialog.adapter.CoolRecycleViewHolder;
-import android.maple.powerfuldialog.adapter.OnItemClickListener;
 import android.maple.powerfuldialog.dialog.PowerfulDialog;
 import android.maple.powerfuldialog.model.StudentModel;
 import android.maple.powerfuldialog.utils.ToastUtils;
