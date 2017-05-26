@@ -11,6 +11,9 @@
     <color name="line_color">#e5e5e5</color> <!-- 分割线颜色 -->
     <color name="text_gray_normal">#585858</color> <!-- 灰色字体 -->
 
+    <color name="gradient_blue_start">#31AAF6</color>
+    <color name="gradient_blue_end">#007CD8</color>
+    <color name="bg_blue_color">#F2FAFF</color>
     <color name="text_six_three">#333333</color>  <!-- 字体颜色1 -->
     <color name="text_six_seven">#777777</color>
     <color name="dialog_content_color">#737373</color><!--弹出框颜色-->
