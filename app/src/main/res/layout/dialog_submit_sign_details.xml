@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="650px"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@drawable/circle_whilte_px10"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30px"
+        android:gravity="center"
+        android:text="打卡"
+        android:textColor="@color/text_six_three"
+        android:textSize="32px" />
+
+    <EditText
+        android:id="@+id/et_content"
+        android:layout_width="match_parent"
+        android:layout_height="200px"
+        android:layout_below="@+id/tv_title"
+        android:layout_margin="30px"
+        android:background="@drawable/multi_shape_edittext_grey"
+        android:hint="请填写签到备注"
+        android:padding="20px"
+        android:textColor="@color/text_six_three"
+        android:textColorHint="@color/text_six_seven"
+        android:textSize="28px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_content"
+        android:layout_marginLeft="30px"
+        android:layout_marginTop="50px"
+        android:text="现场图片" />
+
+    <RelativeLayout
+        android:id="@+id/rl_add_image"
+        android:layout_width="match_parent"
+        android:layout_height="331px"
+        android:layout_below="@+id/et_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="30px"
+        android:layout_marginRight="30px"
+        android:layout_marginTop="108px"
+        android:background="@mipmap/com_icon_upload_certificate_bg">
+
+        <ImageView
+            android:id="@+id/iv_add_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="2px"
+            android:scaleType="fitCenter"
+            android:background="@color/bg_blue_color" />
+
+        <ImageView
+            android:id="@+id/iv_card_add"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/dd_add_image" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/bt_center"
+        android:layout_width="300px"
+        android:layout_height="88px"
+        android:layout_below="@+id/rl_add_image"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="50px"
+        android:layout_marginTop="30px"
+        android:background="@drawable/circle_blue_gradient_px100"
+        android:gravity="center"
+        android:text="确定打卡"
+        android:textColor="@color/white"
+        android:textSize="34px" />
+
+</RelativeLayout>
