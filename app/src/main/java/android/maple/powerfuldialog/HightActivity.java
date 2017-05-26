@@ -111,7 +111,7 @@ public class HightActivity extends Activity implements View.OnClickListener{
                 holder.setText(R.id.tv_item_age,studentModel.getAge()+"");
                 holder.setOnClickListener(R.id.ll_item_student, new View.OnClickListener() {
                     @Override
-                    public void onClick(View view) {//由于测试数据 暂未加id 没有唯一标示 所以 暂不考虑去重复增加和再次点击取消
+                    public void onClick(View view) {//注意：由于测试数据 暂未加id 没有唯一标示 所以 暂不考虑去重复增加和再次点击取消
                         holder.getView(R.id.ll_item_student).setBackgroundColor(getResources().getColor(R.color.app_color));
                         selectStudentModelList.add( studentModel);
                     }
