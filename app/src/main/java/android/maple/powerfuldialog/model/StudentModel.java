@@ -1,7 +1,7 @@
 package android.maple.powerfuldialog.model;
 
 /**
- * Created by guest on 2017/5/25.
+ * Created by wz on 2017/5/25.
  */
 
 public class StudentModel {

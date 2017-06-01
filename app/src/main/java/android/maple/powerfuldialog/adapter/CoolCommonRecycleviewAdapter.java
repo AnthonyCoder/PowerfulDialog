@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lizhichuan on 15/12/23.
+ * Created by wz on 2017/5/23.
  */
 public abstract class CoolCommonRecycleviewAdapter<T> extends RecyclerView.Adapter<CoolRecycleViewHolder> {
     protected List<T> mLists;

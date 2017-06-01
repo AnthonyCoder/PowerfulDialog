@@ -30,7 +30,7 @@ package android.maple.powerfuldialog.adapter;
 import android.view.View;
 
 /**
- * Created by lizhichuan on 12/3/15.
+ * Created by wz on 2017/5/23.
  */
 public interface OnItemClickListener {
 

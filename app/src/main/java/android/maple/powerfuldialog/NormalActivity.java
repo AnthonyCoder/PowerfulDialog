@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 /**
- * Created by guest on 2017/5/24.
+ * Created by wz on 2017/5/24.
  *
  *  普通用法
  */

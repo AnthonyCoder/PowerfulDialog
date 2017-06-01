@@ -1,7 +1,7 @@
 package android.maple.powerfuldialog.dialog.custom;
 
 /**
- * Created by guest on 2017/5/24.
+ * Created by wz on 2017/5/24.
  */
 
 import android.content.Context;
