@@ -70,7 +70,7 @@
         android:layout_width="300px"
         android:layout_height="88px"
         android:layout_below="@+id/rl_add_image"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="50px"
         android:layout_marginTop="30px"
         android:background="@drawable/circle_blue_gradient_px100"

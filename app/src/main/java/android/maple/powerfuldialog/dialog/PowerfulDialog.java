@@ -95,9 +95,9 @@ public class PowerfulDialog extends Dialog {
             return dialog;
         }
         public PowerfulDialog show() {
-            PowerfulDialog dialog = this.create();
-            dialog.show();
-            return dialog;
+            mDialog = this.create();
+            mDialog.show();
+            return mDialog;
         }
         public PowerfulDialog dismiss() {
             mDialog.dismiss();
