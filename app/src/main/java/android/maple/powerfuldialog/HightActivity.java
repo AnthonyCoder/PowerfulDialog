@@ -70,6 +70,7 @@ public class HightActivity extends Activity implements View.OnClickListener{
                 showListDialog();
                 break;
             case R.id.bt_complex:
+                showSignDialog();
                 break;
         }
     }
@@ -154,11 +155,10 @@ public class HightActivity extends Activity implements View.OnClickListener{
         defaultList.add(new StudentModel("曾二层","T325",13));
         return defaultList;
     }
-    private void initSignDialog(){
+    private void showSignDialog(){
         mCapturePhotoHelper = new CapturePhotoHelper(HightActivity.this, FolderManager.getPhotoFolder());
         powerfulDialog=new PowerfulDialog.Builder(mContext)
                 .setDialogView(R.layout.dialog_submit_sign_details)
-                .setWidthAndHeightForPercent(0.867f,0.69f)
                 .setOnclickListener(R.id.iv_add_image, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -187,6 +187,10 @@ public class HightActivity extends Activity implements View.OnClickListener{
                             ToastUtils.showShortToast(mContext,"请填写打卡备注");
                             return;
                         }
+                        if(powerfulDialog!=null){
+                            powerfulDialog.dismiss();
+                        }
+
                         tvContent.setText(signContent);
                         ivImage.setImageBitmap(photoBitmap);
 
@@ -195,6 +199,7 @@ public class HightActivity extends Activity implements View.OnClickListener{
         etContent=powerfulDialog.getView(R.id.et_content);
         ivAddImage=powerfulDialog.getView(R.id.iv_add_image);
         ivAddCard=powerfulDialog.getView(R.id.iv_card_add);
+        powerfulDialog.show();
     }
 
 
