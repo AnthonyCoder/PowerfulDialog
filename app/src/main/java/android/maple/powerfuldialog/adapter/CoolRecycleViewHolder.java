@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * Created by lizhichuan on 15/12/23.
+ * Created by wz on 2017/5/23.
  */
 public class CoolRecycleViewHolder extends RecyclerView.ViewHolder {
 

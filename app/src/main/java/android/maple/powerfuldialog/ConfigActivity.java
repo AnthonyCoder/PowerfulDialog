@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 /**
- * Created by guest on 2017/5/24.
+ * Created by wz on 2017/5/24.
  */
 
 public class ConfigActivity extends Activity implements View.OnClickListener{
