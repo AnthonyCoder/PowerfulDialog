@@ -8,14 +8,11 @@ import android.view.View;
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
-    //#...........................PC_company提交的数据
-
-    //----------------------------第二次提价东阿数据git
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        findViewById(R.id.bt_high).setOnClickListener(this);
+        findViewById(R.id.bt_normal).setOnClickListener(this);
         findViewById(R.id.bt_high).setOnClickListener(this);
         findViewById(R.id.bt_config).setOnClickListener(this);
     }
